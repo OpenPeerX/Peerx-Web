@@ -27,7 +27,7 @@ export default function QRCodeComponent({
       if (!blob) return;
       const link = document.createElement('a');
       link.href = URL.createObjectURL(blob);
-      link.download = `swaptrade-referral-${referralCode}.png`;
+      link.download = `peerx-referral-${referralCode}.png`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
