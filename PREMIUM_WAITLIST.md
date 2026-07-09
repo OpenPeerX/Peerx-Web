@@ -24,7 +24,7 @@ Navigate to `/premium` to view the full premium waitlist experience.
 
 ```bash
 # Production URL
-https://swaptrade.com/premium
+https://peerx.com/premium
 ```
 
 ### 2. Embed Compact Form
