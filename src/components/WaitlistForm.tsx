@@ -273,7 +273,7 @@ export default function WaitlistForm() {
           You&apos;re on the list!
         </h3>
         <p className="text-green-700 dark:text-green-300 mb-4">
-          Thank you for joining our waitlist. We&apos;ll notify you when SwapTrade is ready.
+          Thank you for joining our waitlist. We&apos;ll notify you when PeerX is ready.
         </p>
         <button
           type="button"
