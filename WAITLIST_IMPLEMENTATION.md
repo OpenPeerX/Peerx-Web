@@ -259,8 +259,8 @@ TURNSTILE_SECRET_KEY=your_secret_key
 NEXT_PUBLIC_TURNSTILE_SITE_KEY=your_site_key
 
 # Database
-SWAPTRADE_SQLITE_PATH=/path/to/swaptrade.sqlite
-SWAPTRADE_DATA_DIR=/path/to/data
+PEERX_SQLITE_PATH=/path/to/swaptrade.sqlite
+PEERX_DATA_DIR=/path/to/data
 ```
 
 ## API Security Summary
