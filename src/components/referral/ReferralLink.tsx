@@ -27,8 +27,8 @@ export default function ReferralLink({ referralCode, className = '' }: ReferralL
     if (navigator.share) {
       try {
         await navigator.share({
-          title: 'Join SwapTrade Waitlist',
-          text: 'Check out SwapTrade - a crypto trading simulator! Join the waitlist with my referral link.',
+          title: 'Join PeerX Waitlist',
+          text: 'Check out PeerX - a crypto trading simulator! Join the waitlist with my referral link.',
           url: referralUrl,
         });
       } catch (err) {
@@ -41,7 +41,7 @@ export default function ReferralLink({ referralCode, className = '' }: ReferralL
     <div className={`bg-gradient-to-r from-[#16a34a]/10 to-[#15803d]/10 rounded-lg p-6 border border-[#16a34a]/20 ${className}`}>
       <div className="text-center mb-4">
         <h3 className="text-lg font-semibold text-gray-900 mb-2">
-          🎉 Welcome to SwapTrade!
+          🎉 Welcome to PeerX!
         </h3>
         <p className="text-sm text-gray-600">
           Share your referral link and earn rewards when friends join!
