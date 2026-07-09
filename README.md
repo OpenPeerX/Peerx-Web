@@ -1,5 +1,5 @@
-# SwapTrade Frontend
-This is the repository for the SwapTrade frontend.
+# PeerX Frontend
+This is the repository for the PeerX frontend.
 
 ## Getting Started
 
