@@ -31,7 +31,7 @@
     "csrfUnavailable": "Sicherheitstoken nicht verfügbar. Bitte aktualisieren.",
     "csrfMissing": "Sicherheitstoken fehlt. Bitte aktualisieren und erneut versuchen.",
     "successTitle": "Du bist auf der Liste!",
-    "successMessage": "Danke, dass du dich auf unsere Warteliste eingetragen hast. Wir benachrichtigen dich, wenn SwapTrade bereit ist.",
+    "successMessage": "Danke, dass du dich auf unsere Warteliste eingetragen hast. Wir benachrichtigen dich, wenn PeerX bereit ist.",
     "joinAnother": "Mit einer anderen E-Mail beitreten",
     "genericError": "Ein unerwarteter Fehler ist aufgetreten. Bitte erneut versuchen."
   },
@@ -66,7 +66,7 @@
     "shareTwitter": "Auf Twitter teilen",
     "shareFacebook": "Auf Facebook teilen",
     "shareWhatsApp": "Auf WhatsApp teilen",
-    "shareText": "Tritt SwapTrade bei — dem risikofreien Krypto-Trading-Simulator!"
+    "shareText": "Tritt PeerX bei — dem risikofreien Krypto-Trading-Simulator!"
   },
   "language": {
     "label": "Sprache",
