@@ -25,7 +25,7 @@ npm run dev
    - Name: `John` (optional)
 5. Click "Join Waitlist"
 6. See success message: "You're on the list!"
-7. Browser localStorage now contains `swaptrade_user_id` (open DevTools → Application → LocalStorage)
+7. Browser localStorage now contains `peerx_user_id` (open DevTools → Application → LocalStorage)
 
 ### 3. Test Email Confirmation
 
@@ -172,7 +172,7 @@ curl -X POST http://localhost:3000/api/waitlist/confirm \
 ### Browser DevTools
 ```javascript
 // Console tab
-localStorage.getItem('swaptrade_user_id')  // See user ID
+localStorage.getItem('peerx_user_id')  // See user ID
 
 // Application tab → LocalStorage
 // See all stored data
@@ -180,7 +180,7 @@ localStorage.getItem('swaptrade_user_id')  // See user ID
 
 ### Check Database
 ```bash
-# Database is created at .data/swaptrade.sqlite
+# Database is created at .data/peerx.sqlite
 # Use SQLite browser to inspect:
 # - SELECT * FROM users;
 # - SELECT * FROM referral_codes;
@@ -199,7 +199,7 @@ localStorage.getItem('swaptrade_user_id')  // See user ID
 
 ### Issue: Referral code not generated
 **Cause**: Database setup issue
-**Fix**: Delete `.data/swaptrade.sqlite` and restart
+**Fix**: Delete `.data/peerx.sqlite` and restart
 
 ### Issue: CAPTCHA not showing
 **Cause**: TURNSTILE keys not set
