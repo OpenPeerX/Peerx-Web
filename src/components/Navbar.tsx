@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="text-2xl font-bold text-[var(--primary)]">
-              SwapTrade
+              PeerX
             </Link>
           </div>
 
