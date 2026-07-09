@@ -60,7 +60,7 @@ const initialSignals: Omit<Signal, 'currentPrice' | 'priceChange24h'>[] = [
   }
 ];
 
-const STORAGE_KEY = 'swaptrade_crypto_signals_banner_closed';
+const STORAGE_KEY = 'peerx_crypto_signals_banner_closed';
 
 export default function CryptoSignalsBanner() {
   const [isVisible, setIsVisible] = useState(true);
