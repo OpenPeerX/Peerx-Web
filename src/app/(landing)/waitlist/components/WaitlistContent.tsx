@@ -13,15 +13,15 @@ const HERO_EXPERIMENT = {
 
 const HEADLINES: Record<string, { title: string; subtitle: string }> = {
   control: {
-    title: 'Join the SwapTrade Waitlist',
+    title: 'Join the PeerX Waitlist',
     subtitle: 'Be first to access the next generation of decentralized trading.',
   },
   variant_a: {
     title: 'Trade Smarter. Start Free.',
-    subtitle: 'Get early access to SwapTrade and unlock exclusive launch rewards.',
+    subtitle: 'Get early access to PeerX and unlock exclusive launch rewards.',
   },
   variant_b: {
-    title: 'Your Spot on SwapTrade Awaits',
+    title: 'Your Spot on PeerX Awaits',
     subtitle: 'Limited early access — reserve your place and earn referral bonuses.',
   },
 };
