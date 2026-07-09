@@ -51,7 +51,7 @@ describe('AnalyticsProvider', () => {
   });
 
   it('hides consent banner when consent cookie is already set', async () => {
-    await renderWithProvider('swaptrade_analytics_consent=true');
+    await renderWithProvider('peerx_analytics_consent=true');
     expect(screen.queryByRole('region', { name: /cookie consent/i })).not.toBeInTheDocument();
   });
 
@@ -104,6 +104,6 @@ describe('AnalyticsProvider', () => {
   it('consent persists in cookie after accepting', async () => {
     await renderWithProvider('');
     fireEvent.click(screen.getByRole('button', { name: /accept/i }));
-    expect(document.cookie).toContain('swaptrade_analytics_consent=true');
+    expect(document.cookie).toContain('peerx_analytics_consent=true');
   });
 });
