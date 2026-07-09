@@ -111,7 +111,7 @@ export function enforceRateLimit(params: {
 }
 
 function getEncryptionKey(): Buffer | null {
-  const raw = process.env.SWAPTRADE_DATA_KEY;
+  const raw = process.env.PEERX_DATA_KEY;
   if (!raw) return null;
   try {
     const key = Buffer.from(raw, 'base64');
