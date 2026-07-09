@@ -76,7 +76,7 @@ function sendMixpanel(event: string, properties: EventProperties) {
 // Cookie helpers (GDPR/CCPA compliant)
 // ---------------------------------------------------------------------------
 
-const CONSENT_COOKIE = 'swaptrade_analytics_consent';
+const CONSENT_COOKIE = 'peerx_analytics_consent';
 
 function readConsentCookie(): boolean {
   if (typeof document === 'undefined') return false;
