@@ -13,7 +13,7 @@ function makeReq(params: { key?: string; json: unknown }) {
 }
 
 beforeEach(() => {
-  process.env.SWAPTRADE_SQLITE_PATH = ':memory:';
+  process.env.PEERX_SQLITE_PATH = ':memory:';
   process.env.ADMIN_API_KEY = 'k';
   resetDbForTests();
   getDb();
