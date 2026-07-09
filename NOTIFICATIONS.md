@@ -2,7 +2,7 @@
 
 ## Overview
 
-This system provides secure, customizable push notifications for trades and other events in SwapTrade. It uses **Web Push API**, **Service Workers**, and **Redux** for state management.
+This system provides secure, customizable push notifications for trades and other events in PeerX. It uses **Web Push API**, **Service Workers**, and **Redux** for state management.
 
 ## Features
 
