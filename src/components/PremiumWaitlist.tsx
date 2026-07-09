@@ -348,7 +348,7 @@ export default function PremiumWaitlist({
           </div>
 
           <h1 className="text-5xl sm:text-6xl font-black mb-6 bg-clip-text text-transparent bg-gradient-to-r from-amber-300 via-orange-300 to-red-400">
-            SwapTrade Premium
+            PeerX Premium
           </h1>
 
           <p className="text-xl sm:text-2xl text-slate-300 max-w-3xl mx-auto mb-8 leading-relaxed">
@@ -563,7 +563,7 @@ export default function PremiumWaitlist({
           <div className="space-y-6">
             {[
               {
-                q: 'When will SwapTrade Premium launch?',
+                q: 'When will PeerX Premium launch?',
                 a: 'We&apos;re targeting Q2 2026. Waitlist members will get early access first.',
               },
               {
