@@ -259,7 +259,7 @@ TURNSTILE_SECRET_KEY=your_secret_key
 NEXT_PUBLIC_TURNSTILE_SITE_KEY=your_site_key
 
 # Database
-PEERX_SQLITE_PATH=/path/to/swaptrade.sqlite
+PEERX_SQLITE_PATH=/path/to/peerx.sqlite
 PEERX_DATA_DIR=/path/to/data
 ```
 
