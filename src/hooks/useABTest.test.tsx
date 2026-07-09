@@ -36,19 +36,19 @@ describe('useABTest', () => {
   it('persists the variant in localStorage', () => {
     renderHook(() => useABTest(EXPERIMENT));
     act(() => {});
-    const stored = localStorage.getItem(`swaptrade_ab_${EXPERIMENT.key}`);
+    const stored = localStorage.getItem(`peerx_ab_${EXPERIMENT.key}`);
     expect(EXPERIMENT.variants).toContain(stored);
   });
 
   it('uses stored variant if one already exists', () => {
-    localStorage.setItem(`swaptrade_ab_${EXPERIMENT.key}`, 'variant_a');
+    localStorage.setItem(`peerx_ab_${EXPERIMENT.key}`, 'variant_a');
     const { result } = renderHook(() => useABTest(EXPERIMENT));
     act(() => {});
     expect(result.current.variant).toBe('variant_a');
   });
 
   it('ignores invalid stored variant and re-assigns', () => {
-    localStorage.setItem(`swaptrade_ab_${EXPERIMENT.key}`, 'invalid_variant');
+    localStorage.setItem(`peerx_ab_${EXPERIMENT.key}`, 'invalid_variant');
     const { result } = renderHook(() => useABTest(EXPERIMENT));
     act(() => {});
     expect(EXPERIMENT.variants).toContain(result.current.variant);
@@ -66,8 +66,8 @@ describe('useABTest', () => {
     const N = 200;
 
     for (let i = 0; i < N; i++) {
-      localStorage.setItem('swaptrade_ab_uid', `user_${i}`);
-      localStorage.removeItem(`swaptrade_ab_${weightedExp.key}`);
+      localStorage.setItem('peerx_ab_uid', `user_${i}`);
+      localStorage.removeItem(`peerx_ab_${weightedExp.key}`);
 
       const { result } = renderHook(() => useABTest(weightedExp));
       act(() => {});
