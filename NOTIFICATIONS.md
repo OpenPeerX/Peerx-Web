@@ -154,7 +154,7 @@ function TradesComponent() {
   const handler = createTradeNotificationHandler(userId);
 
   useEffect(() => {
-    const ws = new WebSocket('wss://api.swaptrade.com/trades');
+    const ws = new WebSocket('wss://api.peerx.com/trades');
 
     ws.onmessage = (event) => {
       const trade = JSON.parse(event.data);
