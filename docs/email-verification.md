@@ -77,7 +77,7 @@ Upon successful email verification, each user receives a unique referral link th
 
 ### Features
 - **Unique Codes**: Cryptographically secure 10-character alphanumeric codes
-- **URL Format**: `https://swaptrade.com/signup?ref=UNIQUE_CODE`
+- **URL Format**: `https://peerx.com/signup?ref=UNIQUE_CODE`
 - **Tracking**: Referral relationships stored in database
 - **Sharing**: Copy-to-clipboard and native share API support
 - **Validation**: Referral codes validated on signup
