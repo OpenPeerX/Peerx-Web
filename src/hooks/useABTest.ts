@@ -23,15 +23,35 @@ export interface Experiment<V extends string = string> {
 // ---------------------------------------------------------------------------
 
 /**
- * Simple hash → integer to deterministically bucket a user into a variant.
- * Uses the experiment key + a stable user ID (from localStorage or generated).
+ * cyrb53 — a fast 53-bit hash with strong avalanche properties.
+ * Replaces the previous Java-style (multiplier=31) hash, which clustered
+ * short, similar-prefix strings (e.g. `weighted_exp:user_0` ...
+ * `weighted_exp:user_199`) all into the same output bucket, breaking the
+ * weighted-distribution guarantee of useABTest.
+ *
+ * Reference: https://stackoverflow.com/a/52171480 (Bryc)
  */
-function hashToIndex(seed: string, length: number): number {
-  let hash = 0;
-  for (let i = 0; i < seed.length; i++) {
-    hash = (hash * 31 + seed.charCodeAt(i)) >>> 0;
+function cyrb53(str: string, seed = 0): number {
+  let h1 = 0xdeadbeef ^ seed;
+  let h2 = 0x41c6ce57 ^ seed;
+  for (let i = 0; i < str.length; i++) {
+    const ch = str.charCodeAt(i);
+    h1 = Math.imul(h1 ^ ch, 2654435761);
+    h2 = Math.imul(h2 ^ ch, 1597334677);
   }
-  return hash % length;
+  h1 =
+    Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^
+    Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+  h2 =
+    Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^
+    Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+  return 4294967296 * (2097151 & h2) + (h1 >>> 0);
+}
+
+const HASH_SPACE = 0x100000000; // 2^32
+
+function hashToIndex(seed: string, length: number): number {
+  return (cyrb53(seed) % HASH_SPACE) % length;
 }
 
 function weightedIndex(weights: number[], random: number): number {
@@ -61,12 +81,8 @@ function assignVariant<V extends string>(experiment: Experiment<V>): V {
   const seed = `${experiment.key}:${uid}`;
 
   if (experiment.weights) {
-    // Weighted: convert hash to [0,1) range then bucket
-    let hash = 0;
-    for (let i = 0; i < seed.length; i++) {
-      hash = (hash * 31 + seed.charCodeAt(i)) >>> 0;
-    }
-    const normalized = hash / 0xffffffff;
+    // Weighted: convert 32-bit hash slice to [0,1) then bucket by weight
+    const normalized = (cyrb53(seed) % HASH_SPACE) / 0xffffffff;
     const idx = weightedIndex(experiment.weights, normalized);
     return experiment.variants[idx];
   }

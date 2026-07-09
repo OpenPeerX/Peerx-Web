@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, act, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, within, act, waitFor } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import AnalyticsProvider, { useAnalytics } from './AnalyticsProvider';
 
@@ -9,7 +9,7 @@ import AnalyticsProvider, { useAnalytics } from './AnalyticsProvider';
 function TestConsumer() {
   const { consentGiven, giveConsent, revokeConsent, track } = useAnalytics();
   return (
-    <div>
+    <div data-testid="test-consumer">
       <span data-testid="consent">{consentGiven ? 'yes' : 'no'}</span>
       <button onClick={giveConsent}>Accept</button>
       <button onClick={revokeConsent}>Decline</button>
@@ -34,6 +34,17 @@ async function renderWithProvider(cookieValue?: string) {
     );
   });
   return result!;
+}
+
+/**
+ * The ConsentBanner (rendered when no cookie is set) contains its own
+ * "Accept" and "Decline" buttons with the same visible text as
+ * TestConsumer. To avoid `TestingLibraryElementError: multiple elements
+ * found`, scope every consent-related button query to the TestConsumer
+ * subtree.
+ */
+function consumerScope() {
+  return within(screen.getByTestId('test-consumer'));
 }
 
 beforeEach(() => {
@@ -62,13 +73,13 @@ describe('AnalyticsProvider', () => {
 
   it('sets consentGiven to true when Accept is clicked', async () => {
     await renderWithProvider('');
-    fireEvent.click(screen.getByRole('button', { name: /accept/i }));
+    fireEvent.click(consumerScope().getByRole('button', { name: /accept/i }));
     expect(screen.getByTestId('consent').textContent).toBe('yes');
   });
 
   it('hides banner after accepting', async () => {
     await renderWithProvider('');
-    fireEvent.click(screen.getByRole('button', { name: /accept/i }));
+    fireEvent.click(consumerScope().getByRole('button', { name: /accept/i }));
     await waitFor(() => {
       expect(screen.queryByRole('region', { name: /cookie consent/i })).not.toBeInTheDocument();
     });
@@ -76,7 +87,7 @@ describe('AnalyticsProvider', () => {
 
   it('hides banner after declining', async () => {
     await renderWithProvider('');
-    fireEvent.click(screen.getByRole('button', { name: /decline/i }));
+    fireEvent.click(consumerScope().getByRole('button', { name: /decline/i }));
     await waitFor(() => {
       expect(screen.queryByRole('region', { name: /cookie consent/i })).not.toBeInTheDocument();
     });
@@ -84,15 +95,15 @@ describe('AnalyticsProvider', () => {
 
   it('consentGiven stays false after declining', async () => {
     await renderWithProvider('');
-    fireEvent.click(screen.getByRole('button', { name: /decline/i }));
+    fireEvent.click(consumerScope().getByRole('button', { name: /decline/i }));
     expect(screen.getByTestId('consent').textContent).toBe('no');
   });
 
   it('track does not throw before or after consent', async () => {
     await renderWithProvider('');
-    expect(() => fireEvent.click(screen.getByRole('button', { name: /track/i }))).not.toThrow();
-    fireEvent.click(screen.getByRole('button', { name: /accept/i }));
-    expect(() => fireEvent.click(screen.getByRole('button', { name: /track/i }))).not.toThrow();
+    expect(() => fireEvent.click(consumerScope().getByRole('button', { name: /track/i }))).not.toThrow();
+    fireEvent.click(consumerScope().getByRole('button', { name: /accept/i }));
+    expect(() => fireEvent.click(consumerScope().getByRole('button', { name: /track/i }))).not.toThrow();
   });
 
   it('has no accessibility violations', async () => {
@@ -103,7 +114,7 @@ describe('AnalyticsProvider', () => {
 
   it('consent persists in cookie after accepting', async () => {
     await renderWithProvider('');
-    fireEvent.click(screen.getByRole('button', { name: /accept/i }));
+    fireEvent.click(consumerScope().getByRole('button', { name: /accept/i }));
     expect(document.cookie).toContain('peerx_analytics_consent=true');
   });
 });
