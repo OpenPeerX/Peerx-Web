@@ -2,7 +2,7 @@ import { GET as leaderboardGET } from '@/app/api/leaderboard/route';
 import { getDb, resetDbForTests } from '@/lib/db';
 
 beforeEach(() => {
-  process.env.SWAPTRADE_SQLITE_PATH = ':memory:';
+  process.env.PEERX_SQLITE_PATH = ':memory:';
   resetDbForTests();
   getDb();
 });
