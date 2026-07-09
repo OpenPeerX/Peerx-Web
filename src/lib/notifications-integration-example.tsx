@@ -2,7 +2,7 @@
  * Integration Example: Using Notifications in Dashboard
  * 
  * This file demonstrates how to integrate the notification system
- * into the SwapTrade dashboard for trade and price alerts.
+ * into the PeerX dashboard for trade and price alerts.
  */
 
 'use client';
