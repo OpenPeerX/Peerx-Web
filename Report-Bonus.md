@@ -154,7 +154,7 @@ if (process.env.NODE_ENV === 'production') {
 
 ### Submit Signup
 ```bash
-curl -X POST https://swaptrade.com/api/waitlist/premium \
+curl -X POST https://peerx.com/api/waitlist/premium \
   -H "Content-Type: application/json" \
   -H "X-CSRF-Token: token" \
   -d '{
@@ -166,12 +166,12 @@ curl -X POST https://swaptrade.com/api/waitlist/premium \
 
 ### Check Position
 ```bash
-curl "https://swaptrade.com/api/waitlist/premium?email=user@example.com"
+curl "https://peerx.com/api/waitlist/premium?email=user@example.com"
 ```
 
 ### Get Stats (Admin)
 ```bash
-curl "https://swaptrade.com/api/admin/premium-stats"
+curl "https://peerx.com/api/admin/premium-stats"
 ```
 
 ## Marketing Copy Included
@@ -458,7 +458,7 @@ function TradesComponent() {
   const handler = createTradeNotificationHandler(userId);
 
   useEffect(() => {
-    const ws = new WebSocket('wss://api.swaptrade.com/trades');
+    const ws = new WebSocket('wss://api.peerx.com/trades');
 
     ws.onmessage = (event) => {
       const trade = JSON.parse(event.data);
