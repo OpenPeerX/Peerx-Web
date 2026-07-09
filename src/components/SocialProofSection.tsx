@@ -9,7 +9,7 @@ const ROTATION_INTERVAL_MS = 6000;
 const testimonials = [
   {
     quote:
-      "SwapTrade flagged crowded momentum trades before our team saw the risk in our own dashboards. It turned hours of review into a 10-minute decision.",
+      "PeerX flagged crowded momentum trades before our team saw the risk in our own dashboards. It turned hours of review into a 10-minute decision.",
     name: "Maya Chen",
     credential: "Beta tester, options swing trader",
     image:
@@ -25,7 +25,7 @@ const testimonials = [
   },
   {
     quote:
-      "I used SwapTrade to compare crypto rotation setups against equities. The scenario summaries made position sizing much easier to explain.",
+      "I used PeerX to compare crypto rotation setups against equities. The scenario summaries made position sizing much easier to explain.",
     name: "Ari Okafor",
     credential: "Early adopter, multi-asset trader",
     image:
@@ -63,7 +63,7 @@ const caseStudies = [
     result: "+18.4%",
     title: "Improved weekly risk-adjusted return",
     detail:
-      "A small-cap crypto strategy used SwapTrade alerts to reduce entries during low-liquidity windows across a 6-week beta period.",
+      "A small-cap crypto strategy used PeerX alerts to reduce entries during low-liquidity windows across a 6-week beta period.",
   },
   {
     label: "Education cohort",
@@ -153,7 +153,7 @@ export default function SocialProofSection() {
             id="social-proof-title"
             className="mt-3 text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl"
           >
-            Real beta feedback from traders testing SwapTrade analysis
+            Real beta feedback from traders testing PeerX analysis
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300">
             Testimonials and case studies are drawn from anonymized beta feedback and
@@ -246,7 +246,7 @@ export default function SocialProofSection() {
             >
               <OptimizedImage
                 src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=960&q=75"
-                alt="Beta user reviewing SwapTrade analytics on a laptop"
+                alt="Beta user reviewing PeerX analytics on a laptop"
                 width={960}
                 height={540}
                 className="aspect-video w-full object-cover opacity-80 transition group-hover:scale-[1.02]"
@@ -369,7 +369,7 @@ export default function SocialProofSection() {
                   id="video-testimonial-title"
                   className="text-xl font-bold text-slate-950 dark:text-white"
                 >
-                  How beta users review a SwapTrade signal
+                  How beta users review a PeerX signal
                 </h3>
               </div>
               <button
