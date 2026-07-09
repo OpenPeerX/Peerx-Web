@@ -14,7 +14,7 @@ function ShareButtons({
 }) {
   const [trackingChannels, setTrackingChannels] = useState<Set<ShareChannel>>(new Set());
   
-  const text = encodeURIComponent("Join SwapTrade — the risk-free crypto trading simulator!");
+  const text = encodeURIComponent("Join PeerX — the risk-free crypto trading simulator!");
   
   const handleShareClick = async (channel: ShareChannel, href: string) => {
     setTrackingChannels((prev) => new Set(prev).add(channel));
