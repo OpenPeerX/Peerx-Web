@@ -1,7 +1,26 @@
 {
   "name": "peerx-web",
   "version": "0.1.0",
+  "description": "PeerX — peer-to-peer crypto trading platform (waitlist, referrals, premium tier).",
   "private": true,
+  "license": "MIT",
+  "homepage": "https://peerx.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OpenPeerX/Peerx-Web.git"
+  },
+  "bugs": {
+    "url": "https://github.com/OpenPeerX/Peerx-Web/issues"
+  },
+  "keywords": [
+    "peerx",
+    "crypto",
+    "trading",
+    "waitlist",
+    "referral",
+    "nextjs",
+    "typescript"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
