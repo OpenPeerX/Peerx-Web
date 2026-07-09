@@ -9,7 +9,7 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
     const { discordId, displayName } = body;
-    const content = `Welcome <@${discordId}>! 🎉\nThanks for joining the SwapTrade community, ${displayName || 'friend'}.`;
+    const content = `Welcome <@${discordId}>! 🎉\nThanks for joining the PeerX community, ${displayName || 'friend'}.`;
     await fetch(webhook, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ content }) });
     return NextResponse.json({ ok: true });
   } catch (err) {
