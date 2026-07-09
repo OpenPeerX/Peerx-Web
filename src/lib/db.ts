@@ -227,7 +227,7 @@ export function getDb(): Db {
           ? path.resolve(process.env.PEERX_DATA_DIR)
           : path.join(process.cwd(), '.data');
         fs.mkdirSync(dataDir, { recursive: true });
-        return path.join(dataDir, 'swaptrade.sqlite');
+        return path.join(dataDir, 'peerx.sqlite');
       })();
 
   const instance = new Database(dbPath);
