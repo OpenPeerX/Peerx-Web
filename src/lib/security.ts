@@ -55,7 +55,7 @@ function parseCookies(cookieHeader: string | null): Record<string, string> {
   return out;
 }
 
-export const CSRF_COOKIE_NAME = '__Host-swaptrade-csrf';
+export const CSRF_COOKIE_NAME = '__Host-peerx-csrf';
 export const CSRF_HEADER_NAME = 'x-csrf-token';
 
 export function generateCsrfToken(): string {
