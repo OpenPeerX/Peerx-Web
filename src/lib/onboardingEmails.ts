@@ -80,8 +80,8 @@ export async function sendJobUsingProvider(job: any) {
   const referralLink = meta.referralLink ? `${meta.referralLink}${meta.referralLink.includes('?') ? '&' : '?'}jid=${encodeURIComponent(job.id)}` : null;
 
   const subjectByTemplate: Record<string, string> = {
-    welcome: `Welcome to SwapTrade — confirm your email`,
-    features: `Discover SwapTrade features`,
+    welcome: `Welcome to PeerX — confirm your email`,
+    features: `Discover PeerX features`,
     market_sample: `Exclusive market analysis sample`,
     lead_trader: `A conversation with a lead trader`,
     community_invite: `Join our community`,
@@ -90,7 +90,7 @@ export async function sendJobUsingProvider(job: any) {
     premium_bonus: `Premium bonus content just for you`,
   };
 
-  const subject = subjectByTemplate[job.template] || 'SwapTrade update';
+  const subject = subjectByTemplate[job.template] || 'PeerX update';
 
   function renderTemplate(template: string) {
     const name = meta.name || '';
@@ -101,13 +101,13 @@ export async function sendJobUsingProvider(job: any) {
       case 'welcome':
         return `
           <h2>Welcome ${name ? `${name}` : ''}!</h2>
-          <p>Thanks for joining SwapTrade. Your referral link is below — share it to move up the waitlist.</p>
+          <p>Thanks for joining PeerX. Your referral link is below — share it to move up the waitlist.</p>
           <p><a href="${referralLink || '#'}">Access your referral link</a></p>
           <p>Manage preferences: <a href="${prefsLink}">Email preferences</a> • <a href="${unsubscribeLink}">Unsubscribe</a></p>
         `;
       case 'features':
         return `
-          <h2>What SwapTrade can do</h2>
+          <h2>What PeerX can do</h2>
           <ul>
             <li>Real-time simulated trading</li>
             <li>Advanced analytics and charts</li>
@@ -175,7 +175,7 @@ export async function sendJobUsingProvider(job: any) {
         },
         body: JSON.stringify({
           personalizations: [{ to: [{ email: job.email }], subject }],
-          from: { email: process.env.SENDER_EMAIL || 'noreply@swaptrade.com', name: 'SwapTrade' },
+          from: { email: process.env.SENDER_EMAIL || 'noreply@swaptrade.com', name: 'PeerX' },
           content: [{ type: 'text/html', value: html }],
           tracking_settings: {
             click_tracking: { enable: true, enable_text: true },
