@@ -1,8 +1,8 @@
-# SwapTrade Premium Waitlist
+# PeerX Premium Waitlist
 
 ## Overview
 
-The premium waitlist system captures interested users with a high-conversion marketing funnel and manages the launch of SwapTrade Premium tier.
+The premium waitlist system captures interested users with a high-conversion marketing funnel and manages the launch of PeerX Premium tier.
 
 ### Key Features
 
@@ -208,7 +208,7 @@ CREATE INDEX idx_premium_position ON premium_waitlist(position);
 
 ### Headlines
 
-- "SwapTrade Premium - Trade Like a Pro"
+- "PeerX Premium - Trade Like a Pro"
 - "Professional-Grade Trading Tools"
 - "Advanced Analytics. AI Signals. VIP Community."
 
