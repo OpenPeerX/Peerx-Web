@@ -1,6 +1,6 @@
 # Email Verification System
 
-This document describes the email verification system implemented for the SwapTrade waitlist signup process.
+This document describes the email verification system implemented for the PeerX waitlist signup process.
 
 ## Overview
 
@@ -10,7 +10,7 @@ The email verification system ensures that users provide valid email addresses a
 
 - **Secure Token Generation**: Uses JWT or random UUID for verification tokens
 - **Token Expiration**: Tokens expire after a configurable period (default: 24 hours)
-- **Email Templates**: Branded email templates matching the SwapTrade design
+- **Email Templates**: Branded email templates matching the PeerX design
 - **Error Handling**: Graceful handling of expired or invalid tokens
 - **Resend Functionality**: Users can request new verification emails
 - **Status Tracking**: User verification status is tracked in the database
@@ -99,7 +99,7 @@ Upon successful email verification, each user receives a unique referral link th
 ## Email Template
 
 The verification email should include:
-- SwapTrade branding
+- PeerX branding
 - Clear call-to-action button
 - Verification link with token
 - Expiration notice
