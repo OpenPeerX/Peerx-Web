@@ -71,7 +71,7 @@ export function NavbarPremiumCTA() {
     <a
       href="/premium"
       className="px-4 py-2 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold rounded-lg transition-all hover:scale-105"
-      title="Join SwapTrade Premium waitlist"
+      title="Join PeerX Premium waitlist"
     >
       ✨ Premium
     </a>
@@ -206,7 +206,7 @@ export function WaitlistPositionCard({ email }: { email: string }) {
         🎉 You're #{position} on the premium waitlist!
       </p>
       <p className="text-sm text-gray-600 mt-1">
-        You'll be among the first to access SwapTrade Premium when it launches.
+        You'll be among the first to access PeerX Premium when it launches.
       </p>
     </div>
   );
@@ -216,7 +216,7 @@ export function WaitlistPositionCard({ email }: { email: string }) {
  * Example 8: Referral bonus for premium signups
  */
 export function getPremiumReferralBonusText(referralCode: string): string {
-  return `Join SwapTrade Premium and get 30% lifetime discount. Use code: ${referralCode}`;
+  return `Join PeerX Premium and get 30% lifetime discount. Use code: ${referralCode}`;
 }
 
 /**
