@@ -16,7 +16,7 @@ describe("SocialProofSection", () => {
 
     expect(
       screen.getByRole("heading", {
-        name: /real beta feedback from traders testing swaptrade analysis/i,
+        name: /real beta feedback from traders testing peerx analysis/i,
       })
     ).toBeInTheDocument();
     expect(screen.getByText("Maya Chen")).toBeInTheDocument();
@@ -47,7 +47,7 @@ describe("SocialProofSection", () => {
 
     expect(screen.getByRole("dialog")).toBeInTheDocument();
     expect(
-      screen.getByRole("heading", { name: /how beta users review a swaptrade signal/i })
+      screen.getByRole("heading", { name: /how beta users review a peerx signal/i })
     ).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("button", { name: /close/i }));
