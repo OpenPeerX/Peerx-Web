@@ -1,7 +1,7 @@
-# SwapTrade Waitlist Feature Implementation
+# PeerX Waitlist Feature Implementation
 
 ## Overview
-This document describes the complete implementation of the SwapTrade Waitlist feature for the "Waitlist for New Features" branch. The implementation includes all required components for users to join a waitlist, receive email confirmations, and view their status.
+This document describes the complete implementation of the PeerX Waitlist feature for the "Waitlist for New Features" branch. The implementation includes all required components for users to join a waitlist, receive email confirmations, and view their status.
 
 ## Requirements Met
 
@@ -42,7 +42,7 @@ Enhanced email sending with:
 - Verification link with token
 - Beautiful HTML email template
 - Expiration information (24-hour windows)
-- SwapTrade feature highlights
+- PeerX feature highlights
 - Professional footer with unsubscribe link
 
 **Function**: `sendWaitlistSignupEmail()`
