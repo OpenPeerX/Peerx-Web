@@ -13,7 +13,7 @@ export default function BonusPage() {
   const [checking, setChecking] = useState(true);
 
   useEffect(() => {
-    const id = localStorage.getItem("swaptrade_user_id");
+    const id = localStorage.getItem("peerx_user_id");
     if (!id) {
       router.replace("/?auth=required");
     } else {
