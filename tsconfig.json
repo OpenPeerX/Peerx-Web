@@ -30,5 +30,5 @@
     "src/**/*.d.ts",
     ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules", "swaptrade-frontend"]
+  "exclude": ["node_modules", "peerx-web"]
 }
