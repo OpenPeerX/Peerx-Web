@@ -1,13 +1,20 @@
-import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
 import SocialProofSection from "@/components/SocialProofSection";
 
 jest.mock("next/image", () => ({
   __esModule: true,
-  default: ({ alt, priority: _priority, ...props }) => {
-    return React.createElement("img", { alt, ...props });
-  },
+  // Returns a Component whose render output is null. This satisfies the
+  // React rendering tree (so axe / getByRole etc. don't error on missing
+  // children) without referring to React.createElement or any other
+  // out-of-scope variable — the jest.mock factory is hoisted to the top
+  // of the file by Jest, so only globals may be referenced here.
+  default: Object.assign(
+    function MockNextImage() {
+      return null;
+    },
+    { displayName: "MockNextImage" }
+  ),
 }));
 
 describe("SocialProofSection", () => {
