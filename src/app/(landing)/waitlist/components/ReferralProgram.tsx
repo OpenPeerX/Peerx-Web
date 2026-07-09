@@ -126,12 +126,12 @@ export default function ReferralProgram({ userId, isPremium }: { userId: string;
             <p className="text-sm font-medium">Share</p>
             <div className="flex flex-wrap gap-2">
               <button
-                onClick={() => { handleShare('twitter'); window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent('Join me on SwapTrade — a crypto trading simulator!')}&url=${encodeURIComponent(referralUrl || '')}`,'_blank'); }}
+                onClick={() => { handleShare('twitter'); window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent('Join me on PeerX — a crypto trading simulator!')}&url=${encodeURIComponent(referralUrl || '')}`,'_blank'); }}
                 className="px-3 py-2 rounded bg-sky-500 text-white text-sm"
               >Twitter / X</button>
 
               <button
-                onClick={() => { handleShare('telegram'); window.open(`https://t.me/share/url?url=${encodeURIComponent(referralUrl || '')}&text=${encodeURIComponent('Join SwapTrade — risk-free crypto trading simulator!')}`,'_blank'); }}
+                onClick={() => { handleShare('telegram'); window.open(`https://t.me/share/url?url=${encodeURIComponent(referralUrl || '')}&text=${encodeURIComponent('Join PeerX — risk-free crypto trading simulator!')}`,'_blank'); }}
                 className="px-3 py-2 rounded bg-blue-400 text-white text-sm"
               >Telegram</button>
 
@@ -141,7 +141,7 @@ export default function ReferralProgram({ userId, isPremium }: { userId: string;
               >Discord</button>
 
               <button
-                onClick={() => { handleShare('email'); window.location.href = `mailto:?subject=${encodeURIComponent('Join SwapTrade')}&body=${encodeURIComponent(`Join SwapTrade — sign up with my referral link: ${referralUrl}`)}`; }}
+                onClick={() => { handleShare('email'); window.location.href = `mailto:?subject=${encodeURIComponent('Join PeerX')}&body=${encodeURIComponent(`Join PeerX — sign up with my referral link: ${referralUrl}`)}`; }}
                 className="px-3 py-2 rounded bg-gray-700 text-white text-sm"
               >Email</button>
 
