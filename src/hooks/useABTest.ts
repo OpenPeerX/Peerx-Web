@@ -43,8 +43,8 @@ function weightedIndex(weights: number[], random: number): number {
   return weights.length - 1;
 }
 
-const STORAGE_KEY_PREFIX = 'swaptrade_ab_';
-const USER_ID_KEY = 'swaptrade_ab_uid';
+const STORAGE_KEY_PREFIX = 'peerx_ab_';
+const USER_ID_KEY = 'peerx_ab_uid';
 
 function getOrCreateUserId(): string {
   if (typeof window === 'undefined') return 'ssr';
