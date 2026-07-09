@@ -15,7 +15,7 @@ export async function sendWaitlistSignupEmail({
 }) {
   if (process.env.EMAIL_MODE !== 'enabled') return;
 
-  const subject = 'Welcome to SwapTrade — Confirm your email';
+  const subject = 'Welcome to PeerX — Confirm your email';
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || `https://${process.env.VERCEL_URL || 'swaptrade.com'}`;
   const unsubscribeLink = `${baseUrl}/api/email/preferences/unsubscribe?email=${encodeURIComponent(to)}`;
@@ -33,7 +33,7 @@ export async function sendWaitlistSignupEmail({
   const html = `
     <div style="font-family: system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial; color: #0f172a;">
       <h2>Welcome${displayName ? `, ${displayName}` : ''}!</h2>
-      <p>Thanks for joining the SwapTrade waitlist. We'll keep you updated while you wait for early access.</p>
+      <p>Thanks for joining the PeerX waitlist. We'll keep you updated while you wait for early access.</p>
       ${verifyHtml}
       ${referralHtml}
       <p style="font-size:13px;color:#6b7280">Manage your email preferences <a href="${prefsLink}">here</a> or <a href="${unsubscribeLink}">unsubscribe</a>.</p>
@@ -51,7 +51,7 @@ export async function sendWaitlistSignupEmail({
         },
         body: JSON.stringify({
           personalizations: [{ to: [{ email: to }] }],
-          from: { email: process.env.SENDER_EMAIL || 'noreply@swaptrade.com', name: 'SwapTrade' },
+          from: { email: process.env.SENDER_EMAIL || 'noreply@swaptrade.com', name: 'PeerX' },
           subject,
           content: [{ type: 'text/html', value: html }],
         }),
@@ -72,11 +72,11 @@ export async function sendMagicLinkEmail({ to, token }: { to: string; token: str
   if (process.env.EMAIL_MODE !== 'enabled') return;
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || `https://${process.env.VERCEL_URL || 'swaptrade.com'}`;
   const link = `${baseUrl}/auth/magic/verify?token=${encodeURIComponent(token)}`;
-  const subject = `Your magic login link for SwapTrade`;
+  const subject = `Your magic login link for PeerX`;
   const html = `
     <div style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; color:#0f172a;">
-      <p>Click the link below to sign in to your SwapTrade dashboard. The link expires in 30 minutes.</p>
-      <p style="text-align:center;margin:20px 0"><a href="${link}" style="background:#16a34a;color:#fff;padding:12px 20px;border-radius:6px;text-decoration:none;font-weight:600;">Sign in to SwapTrade</a></p>
+      <p>Click the link below to sign in to your PeerX dashboard. The link expires in 30 minutes.</p>
+      <p style="text-align:center;margin:20px 0"><a href="${link}" style="background:#16a34a;color:#fff;padding:12px 20px;border-radius:6px;text-decoration:none;font-weight:600;">Sign in to PeerX</a></p>
       <p style="font-size:13px;color:#6b7280">If you did not request this, you can ignore this email.</p>
     </div>
   `;
@@ -92,7 +92,7 @@ export async function sendMagicLinkEmail({ to, token }: { to: string; token: str
         },
         body: JSON.stringify({
           personalizations: [{ to: [{ email: to }] }],
-          from: { email: process.env.SENDER_EMAIL || 'noreply@swaptrade.com', name: 'SwapTrade' },
+          from: { email: process.env.SENDER_EMAIL || 'noreply@swaptrade.com', name: 'PeerX' },
           subject,
           content: [{ type: 'text/html', value: html }],
         }),
@@ -116,8 +116,8 @@ export async function sendPremiumWaitlistEmail(data: {
 
   // Email template for premium waitlist
   const subject = data.isNew
-    ? `Welcome to SwapTrade Premium! You're #${data.position}`
-    : 'Already on SwapTrade Premium Waitlist';
+    ? `Welcome to PeerX Premium! You're #${data.position}`
+    : 'Already on PeerX Premium Waitlist';
 
   /*
   const htmlContent = `
