@@ -2,8 +2,8 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'SwapTrade',
-    short_name: 'SwapTrade',
+    name: 'PeerX',
+    short_name: 'PeerX',
     description: 'Decentralized trading and referral platform',
     start_url: '/',
     display: 'standalone',
