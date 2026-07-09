@@ -21,9 +21,9 @@ async function issueCsrf() {
   const json = (await res.json()) as { token: string };
   const setCookie = res.headers.get('set-cookie');
   expect(setCookie).toBeTruthy();
-  const cookieToken = getCookieValue(setCookie as string, '__Host-swaptrade-csrf');
+  const cookieToken = getCookieValue(setCookie as string, '__Host-peerx-csrf');
   expect(cookieToken).toBeTruthy();
-  return { token: json.token, cookie: `__Host-swaptrade-csrf=${cookieToken}` };
+  return { token: json.token, cookie: `__Host-peerx-csrf=${cookieToken}` };
 }
 
 function makeRequest(params: {
