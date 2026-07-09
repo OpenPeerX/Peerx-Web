@@ -279,7 +279,7 @@ export async function POST(req: Request) {
         userId: result.user.id,
         email: normalizedEmail,
         name,
-        referralLink: `https://${req.headers.get('host') || 'swaptrade.com'}/?ref=${result.myReferralCode}`,
+        referralLink: `https://${req.headers.get('host') || 'peerx.com'}/?ref=${result.myReferralCode}`,
         isPremium: false,
       }).catch((e) => console.error('schedulePostSignupSequence failed', e));
     } catch (e) {
