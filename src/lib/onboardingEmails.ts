@@ -175,7 +175,7 @@ export async function sendJobUsingProvider(job: any) {
         },
         body: JSON.stringify({
           personalizations: [{ to: [{ email: job.email }], subject }],
-          from: { email: process.env.SENDER_EMAIL || 'noreply@swaptrade.com', name: 'PeerX' },
+          from: { email: process.env.SENDER_EMAIL || 'noreply@peerx.com', name: 'PeerX' },
           content: [{ type: 'text/html', value: html }],
           tracking_settings: {
             click_tracking: { enable: true, enable_text: true },
