@@ -126,14 +126,14 @@ self.addEventListener('push', (event) => {
     // If not JSON, treat text as notification body
     payload = {
       type: 'system',
-      title: 'SwapTrade Notification',
+      title: 'PeerX Notification',
       body: event.data.text(),
     };
   }
 
   const {
     type = 'system',
-    title = 'SwapTrade',
+    title = 'PeerX',
     body = 'New notification',
     icon = '/favicon.ico',
     badge = '/badge.png',
@@ -220,7 +220,7 @@ self.addEventListener('message', (event) => {
     const { payload } = event.data;
 
     const {
-      title = 'SwapTrade',
+      title = 'PeerX',
       body = 'Notification',
       icon = '/favicon.ico',
       badge = '/badge.png',
