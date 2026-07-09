@@ -16,7 +16,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "SwapTrade",
+  title: "PeerX",
   description: "Decentralized trading and referral platform",
 };
 
