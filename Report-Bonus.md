@@ -2,7 +2,7 @@
 
 ## What Was Built
 
-A complete premium waitlist system for SwapTrade with marketing-optimized landing page, form, analytics dashboard, and conversion tracking.
+A complete premium waitlist system for PeerX with marketing-optimized landing page, form, analytics dashboard, and conversion tracking.
 
 ## Files Created
 
@@ -122,7 +122,7 @@ export async function sendPremiumWaitlistEmail(data: {
   // Integrate with your email service
   await emailService.send({
     to: data.email,
-    subject: `Welcome to SwapTrade Premium! Position #${data.position}`,
+    subject: `Welcome to PeerX Premium! Position #${data.position}`,
     html: premiumWaitlistEmailTemplate(data),
   });
 }
@@ -176,7 +176,7 @@ curl "https://swaptrade.com/api/admin/premium-stats"
 
 ## Marketing Copy Included
 
-✅ Hero headline: "SwapTrade Premium - Level up your trading game"
+✅ Hero headline: "PeerX Premium - Level up your trading game"
 ✅ Benefits section: 6 premium features with icons
 ✅ Value propositions: First-mover advantage, founding discount, etc.
 ✅ Social proof: 500+ waitlisted, 30% savings messaging
@@ -306,7 +306,7 @@ All files committed and ready to deploy. No additional setup required beyond opt
 
 ## Overview
 
-This system provides secure, customizable push notifications for trades and other events in SwapTrade. It uses **Web Push API**, **Service Workers**, and **Redux** for state management.
+This system provides secure, customizable push notifications for trades and other events in PeerX. It uses **Web Push API**, **Service Workers**, and **Redux** for state management.
 
 ## Features
 
