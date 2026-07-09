@@ -31,7 +31,7 @@
     "csrfUnavailable": "Token de seguridad no disponible. Por favor actualiza.",
     "csrfMissing": "Token de seguridad faltante. Por favor actualiza e intenta de nuevo.",
     "successTitle": "¡Estás en la lista!",
-    "successMessage": "Gracias por unirte a nuestra lista de espera. Te notificaremos cuando SwapTrade esté listo.",
+    "successMessage": "Gracias por unirte a nuestra lista de espera. Te notificaremos cuando PeerX esté listo.",
     "joinAnother": "Unirse con otro correo",
     "genericError": "Ocurrió un error inesperado. Por favor intenta de nuevo."
   },
@@ -66,7 +66,7 @@
     "shareTwitter": "Compartir en Twitter",
     "shareFacebook": "Compartir en Facebook",
     "shareWhatsApp": "Compartir en WhatsApp",
-    "shareText": "¡Únete a SwapTrade — el simulador de trading de criptomonedas sin riesgo!"
+    "shareText": "¡Únete a PeerX — el simulador de trading de criptomonedas sin riesgo!"
   },
   "language": {
     "label": "Idioma",
