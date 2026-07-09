@@ -17,7 +17,7 @@ export default function WaitlistStatus() {
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
 
   const checkStatus = async () => {
-    const userId = localStorage.getItem('swaptrade_user_id');
+    const userId = localStorage.getItem('peerx_user_id');
 
     if (!userId) {
       setStatus({ isOnWaitlist: false, verified: false });
