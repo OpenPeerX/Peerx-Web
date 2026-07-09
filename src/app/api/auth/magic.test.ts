@@ -12,7 +12,7 @@ function makeRequest(params: { url: string; method: string; json?: unknown; orig
 }
 
 beforeEach(() => {
-  process.env.SWAPTRADE_SQLITE_PATH = ':memory:';
+  process.env.PEERX_SQLITE_PATH = ':memory:';
   resetDbForTests();
   getDb();
 });
