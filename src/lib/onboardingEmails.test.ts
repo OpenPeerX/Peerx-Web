@@ -2,7 +2,7 @@ import { getDb, resetDbForTests } from './db';
 import { schedulePostSignupSequence, fetchDueEmailJobs } from './onboardingEmails';
 
 beforeEach(() => {
-  process.env.SWAPTRADE_SQLITE_PATH = ':memory:';
+  process.env.PEERX_SQLITE_PATH = ':memory:';
   resetDbForTests();
   getDb();
 });
