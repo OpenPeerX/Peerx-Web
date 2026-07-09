@@ -113,7 +113,7 @@ export default function WaitlistStatus() {
             Email Confirmed!
           </h3>
           <div className="bg-green-100 dark:bg-green-900/30 border border-green-200 dark:border-green-800 text-green-700 dark:text-green-300 px-4 py-3 rounded-lg relative mb-4">
-            You&apos;re on the waitlist! We&apos;ll notify you when SwapTrade launches.
+            You&apos;re on the waitlist! We&apos;ll notify you when PeerX launches.
           </div>
           <div className="grid grid-cols-2 gap-4 mb-3">
             {status.position && (
