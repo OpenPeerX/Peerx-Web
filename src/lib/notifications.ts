@@ -215,7 +215,7 @@ export function getNotificationPreferences(): NotificationPreferences {
   if (typeof window === 'undefined') return DEFAULTS;
 
   try {
-    const stored = localStorage.getItem('swaptrade_notification_prefs');
+    const stored = localStorage.getItem('peerx_notification_prefs');
     return stored ? JSON.parse(stored) : DEFAULTS;
   } catch (error) {
     console.error('Failed to get notification preferences:', error);
@@ -237,7 +237,7 @@ export async function setNotificationPreferences(
     const updated = { ...current, ...prefs };
 
     // Save locally
-    localStorage.setItem('swaptrade_notification_prefs', JSON.stringify(updated));
+    localStorage.setItem('peerx_notification_prefs', JSON.stringify(updated));
 
     // Save to backend if userId provided
     if (userId) {
