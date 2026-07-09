@@ -7,7 +7,7 @@ export default function PostSignupOnboarding() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const userId = localStorage.getItem('swaptrade_user_id');
+    const userId = localStorage.getItem('peerx_user_id');
     if (!userId) {
       setLoading(false);
       return;
