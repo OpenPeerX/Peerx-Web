@@ -18,7 +18,7 @@ function MagicAuthContent() {
         if (!res.ok) throw new Error('Invalid token');
         const data = await res.json();
         if (data?.userId) {
-          localStorage.setItem('swaptrade_user_id', data.userId);
+          localStorage.setItem('peerx_user_id', data.userId);
           setStatus('Signed in — redirecting...');
           setTimeout(() => router.push('/dashboard'), 800);
         }
