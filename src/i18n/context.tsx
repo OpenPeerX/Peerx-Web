@@ -27,14 +27,14 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
   const [messages, setMessages] = useState<Messages>({});
 
   useEffect(() => {
-    const saved = localStorage.getItem("swaptrade_locale") as Locale | null;
+    const saved = localStorage.getItem("peerx_locale") as Locale | null;
     const initial = saved && locales.includes(saved) ? saved : defaultLocale;
     setLocaleState(initial);
   }, []);
 
   useEffect(() => {
     loadMessages(locale).then(setMessages);
-    localStorage.setItem("swaptrade_locale", locale);
+    localStorage.setItem("peerx_locale", locale);
     // Set dir attribute for RTL support
     document.documentElement.setAttribute(
       "dir",
