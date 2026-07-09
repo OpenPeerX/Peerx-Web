@@ -217,14 +217,14 @@ function initDb(database: Db) {
 export function getDb(): Db {
   if (db) return db;
 
-  const explicitPath = process.env.SWAPTRADE_SQLITE_PATH;
+  const explicitPath = process.env.PEERX_SQLITE_PATH;
   const dbPath = explicitPath
     ? explicitPath === ':memory:'
       ? ':memory:'
       : path.resolve(explicitPath)
     : (() => {
-        const dataDir = process.env.SWAPTRADE_DATA_DIR
-          ? path.resolve(process.env.SWAPTRADE_DATA_DIR)
+        const dataDir = process.env.PEERX_DATA_DIR
+          ? path.resolve(process.env.PEERX_DATA_DIR)
           : path.join(process.cwd(), '.data');
         fs.mkdirSync(dataDir, { recursive: true });
         return path.join(dataDir, 'swaptrade.sqlite');
