@@ -17,7 +17,7 @@ export async function sendWaitlistSignupEmail({
 
   const subject = 'Welcome to PeerX — Confirm your email';
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || `https://${process.env.VERCEL_URL || 'swaptrade.com'}`;
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || `https://${process.env.VERCEL_URL || 'peerx.com'}`;
   const unsubscribeLink = `${baseUrl}/api/email/preferences/unsubscribe?email=${encodeURIComponent(to)}`;
   const prefsLink = `${baseUrl}/preferences?email=${encodeURIComponent(to)}`;
 
@@ -51,7 +51,7 @@ export async function sendWaitlistSignupEmail({
         },
         body: JSON.stringify({
           personalizations: [{ to: [{ email: to }] }],
-          from: { email: process.env.SENDER_EMAIL || 'noreply@swaptrade.com', name: 'PeerX' },
+          from: { email: process.env.SENDER_EMAIL || 'noreply@peerx.com', name: 'PeerX' },
           subject,
           content: [{ type: 'text/html', value: html }],
         }),
@@ -70,7 +70,7 @@ export async function sendWaitlistSignupEmail({
 
 export async function sendMagicLinkEmail({ to, token }: { to: string; token: string }) {
   if (process.env.EMAIL_MODE !== 'enabled') return;
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || `https://${process.env.VERCEL_URL || 'swaptrade.com'}`;
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || `https://${process.env.VERCEL_URL || 'peerx.com'}`;
   const link = `${baseUrl}/auth/magic/verify?token=${encodeURIComponent(token)}`;
   const subject = `Your magic login link for PeerX`;
   const html = `
@@ -92,7 +92,7 @@ export async function sendMagicLinkEmail({ to, token }: { to: string; token: str
         },
         body: JSON.stringify({
           personalizations: [{ to: [{ email: to }] }],
-          from: { email: process.env.SENDER_EMAIL || 'noreply@swaptrade.com', name: 'PeerX' },
+          from: { email: process.env.SENDER_EMAIL || 'noreply@peerx.com', name: 'PeerX' },
           subject,
           content: [{ type: 'text/html', value: html }],
         }),
