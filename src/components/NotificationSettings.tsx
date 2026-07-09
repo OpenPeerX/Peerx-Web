@@ -134,7 +134,7 @@ export default function NotificationSettings({
                 Enable Notifications
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                Allow SwapTrade to send you notifications
+                Allow PeerX to send you notifications
               </p>
             </div>
             <label className="flex items-center cursor-pointer">
