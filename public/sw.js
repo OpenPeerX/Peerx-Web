@@ -1,7 +1,7 @@
 const CACHE_VERSION = 'v1';
-const STATIC_CACHE = `swaptrade-static-${CACHE_VERSION}`;
-const DYNAMIC_CACHE = `swaptrade-dynamic-${CACHE_VERSION}`;
-const IMAGE_CACHE = `swaptrade-images-${CACHE_VERSION}`;
+const STATIC_CACHE = `peerx-static-${CACHE_VERSION}`;
+const DYNAMIC_CACHE = `peerx-dynamic-${CACHE_VERSION}`;
+const IMAGE_CACHE = `peerx-images-${CACHE_VERSION}`;
 
 const PRECACHE_URLS = ['/', '/offline'];
 
