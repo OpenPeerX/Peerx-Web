@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import PreferencesForm from './PreferencesForm';
 
 export const metadata = {
-  title: 'Email Preferences - SwapTrade',
+  title: 'Email Preferences - PeerX',
 };
 
 function PreferencesSkeleton() {
