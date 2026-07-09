@@ -221,7 +221,7 @@ export default function WaitlistForm() {
         
         // Store user ID for dashboard access
         if (data.user?.id) {
-          localStorage.setItem('swaptrade_user_id', data.user.id);
+          localStorage.setItem('peerx_user_id', data.user.id);
         }
 
         setIsSuccess(true);
