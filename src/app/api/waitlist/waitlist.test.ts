@@ -46,7 +46,7 @@ function makeRequest(params: {
 }
 
 beforeEach(() => {
-  process.env.SWAPTRADE_SQLITE_PATH = ':memory:';
+  process.env.PEERX_SQLITE_PATH = ':memory:';
   delete process.env.TURNSTILE_SECRET_KEY;
   resetDbForTests();
   getDb();
