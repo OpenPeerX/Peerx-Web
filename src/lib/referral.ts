@@ -25,7 +25,7 @@ export function generateReferralCode(length: number = 10): string {
  * @returns Complete referral URL
  */
 export function generateReferralLink(referralCode: string, baseUrl?: string): string {
-  const base = baseUrl || (typeof window !== 'undefined' ? window.location.origin : 'https://swaptrade.com');
+  const base = baseUrl || (typeof window !== 'undefined' ? window.location.origin : 'https://peerx.com');
   return `${base}/signup?ref=${referralCode}`;
 }
 
