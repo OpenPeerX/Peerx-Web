@@ -31,7 +31,7 @@
     "csrfUnavailable": "Jeton de sécurité indisponible. Veuillez actualiser.",
     "csrfMissing": "Jeton de sécurité manquant. Veuillez actualiser et réessayer.",
     "successTitle": "Vous êtes sur la liste !",
-    "successMessage": "Merci de rejoindre notre liste d'attente. Nous vous informerons quand SwapTrade sera prêt.",
+    "successMessage": "Merci de rejoindre notre liste d'attente. Nous vous informerons quand PeerX sera prêt.",
     "joinAnother": "S'inscrire avec un autre e-mail",
     "genericError": "Une erreur inattendue s'est produite. Veuillez réessayer."
   },
@@ -66,7 +66,7 @@
     "shareTwitter": "Partager sur Twitter",
     "shareFacebook": "Partager sur Facebook",
     "shareWhatsApp": "Partager sur WhatsApp",
-    "shareText": "Rejoignez SwapTrade — le simulateur de trading crypto sans risque !"
+    "shareText": "Rejoignez PeerX — le simulateur de trading crypto sans risque !"
   },
   "language": {
     "label": "Langue",
