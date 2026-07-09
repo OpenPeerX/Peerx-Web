@@ -41,7 +41,7 @@ function ConfirmContent() {
           setStatus('success');
           setMessage('Your email has been confirmed! You are now on the waitlist.');
           // Store user ID for dashboard access
-          localStorage.setItem('swaptrade_user_id', userId);
+          localStorage.setItem('peerx_user_id', userId);
         }
       } catch {
         setStatus('error');
