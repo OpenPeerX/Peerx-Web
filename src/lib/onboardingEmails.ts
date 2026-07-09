@@ -132,7 +132,7 @@ export async function sendJobUsingProvider(job: any) {
         return `
           <h2>Join the community</h2>
           <p>Connect with other traders on Discord and Telegram.</p>
-          <p><a href="https://discord.gg/swaptrade${trackingParam}">Join Discord</a> • <a href="https://t.me/swaptrade${trackingParam}">Join Telegram</a></p>
+          <p><a href="https://discord.gg/peerx${trackingParam}">Join Discord</a> • <a href="https://t.me/swaptrade${trackingParam}">Join Telegram</a></p>
         `;
       case 'early_access_guide':
         return `
