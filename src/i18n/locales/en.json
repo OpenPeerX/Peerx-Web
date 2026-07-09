@@ -32,7 +32,7 @@
     "csrfUnavailable": "Security token unavailable. Please refresh.",
     "csrfMissing": "Security token missing. Please refresh and try again.",
     "successTitle": "You're on the list!",
-    "successMessage": "Thank you for joining our waitlist. We'll notify you when SwapTrade is ready.",
+    "successMessage": "Thank you for joining our waitlist. We'll notify you when PeerX is ready.",
     "joinAnother": "Join with another email",
     "genericError": "An unexpected error occurred. Please try again."
   },
@@ -67,7 +67,7 @@
     "shareTwitter": "Share on Twitter",
     "shareFacebook": "Share on Facebook",
     "shareWhatsApp": "Share on WhatsApp",
-    "shareText": "Join SwapTrade — the risk-free crypto trading simulator!"
+    "shareText": "Join PeerX — the risk-free crypto trading simulator!"
   },
   "language": {
     "label": "Language",
