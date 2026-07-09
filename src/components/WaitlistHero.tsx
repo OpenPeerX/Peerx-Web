@@ -135,7 +135,7 @@ export default function WaitlistHero() {
 
         {/* Subheadline */}
         <p className="text-lg sm:text-xl text-slate-400 max-w-2xl mb-10 leading-relaxed">
-          SwapTrade is the professional-grade DEX built on Stellar —
+          PeerX is the professional-grade DEX built on Stellar —
           real-time signals, AI-powered insights, and zero gas surprises.
           Join the waitlist before spots fill up.
         </p>
