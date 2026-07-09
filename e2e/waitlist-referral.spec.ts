@@ -7,7 +7,12 @@ test('user can join waitlist (smoke)', async ({ page }) => {
   await page.getByLabel('Email address').fill(email);
   await page.getByRole('button', { name: 'Join Waitlist' }).click();
 
-  await expect(page.getByRole('alert')).toContainText("You're on the list!");
+  // Next.js renders a hidden <div role="alert" id="__next-route-announcer__">
+  // for a11y route announcements. Filter by visible text so strict-mode finds
+  // only the real toast/alert we care about.
+  await expect(
+    page.getByRole('alert').filter({ hasText: "You're on the list!" })
+  ).toBeVisible();
 });
 
 test('referral flow awards 1 point after verify', async ({ page, request }) => {

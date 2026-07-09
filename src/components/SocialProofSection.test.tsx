@@ -1,3 +1,4 @@
+import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
 import SocialProofSection from "@/components/SocialProofSection";
@@ -5,7 +6,6 @@ import SocialProofSection from "@/components/SocialProofSection";
 jest.mock("next/image", () => ({
   __esModule: true,
   default: ({ alt, priority: _priority, ...props }) => {
-    const React = require("react");
     return React.createElement("img", { alt, ...props });
   },
 }));

@@ -1,6 +1,6 @@
-import Link from 'next/link';
 "use client";
 
+import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { useI18n } from '@/i18n/context';
 import OptimizedImage from './ui/OptimizedImage';
