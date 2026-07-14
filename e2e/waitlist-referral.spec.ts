@@ -4,13 +4,21 @@ import { test, expect } from '@playwright/test';
  * Sanity-check that the Next.js server boots and renders the landing page
  * without depending on captcha or CSRF secrets. This is the only test that
  * runs unconditionally — it acts as a guardrail for the build pipeline.
+ *
+ * The hero pulls in `WaitlistForm` via
+ * `dynamic(() => import('./WaitlistForm'), { ssr: false })` to keep the
+ * landing-page bundle small, so the "Email address" input is NOT in the
+ * initial SSR HTML — it only appears after React hydrates and the async
+ * chunk executes (i.e. *after* the `load` event fires). We therefore wait
+ * for `#waitlist-email` to actually mount rather than relying on
+ * `waitUntil: 'networkidle'`, which can hang on the PWA service worker this
+ * app registers. The 30s ceiling absorbs slow CI runners; the default 5s
+ * `expect` timeout is racy against dynamic imports on
+ * resource-constrained GitHub Actions hosts.
  */
 test('homepage boots and renders successfully', async ({ page }) => {
   await page.goto('/');
-  // The landing page must render without throwing; checking the email
-  // input is present proves the React tree mounted and the waitlist
-  // form loaded its client bundle.
-  await expect(page.getByLabel('Email address')).toBeVisible();
+  await page.waitForSelector('input#waitlist-email', { state: 'visible', timeout: 30_000 });
 });
 
 test.describe('Waitlist Flow (skipped in CI: requires Turnstile + CSRF env vars)', () => {
