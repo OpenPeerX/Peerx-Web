@@ -39,3 +39,6 @@ next-env.d.ts
 # Binary executables (blocks accidental commits of compiled binaries)
 *.exe
 *.dll
+
+# Playwright outputs (Junit reports, trace zip, last-run summaries)
+/test-results/
